@@ -1,0 +1,55 @@
+Keras notes:
+
+Q: What are epochs, iteration, batch size?
+
+A: These terms are used when SGD is used. i.e. data is too big to pass to the computer
+   
+One epoch is when an ENTIRE dataset is passed forward and backward through the neural network only ONCE.
+- More epochs are better because there will be more updates
+- However, using too many epochs leads to overfitting
+- Heuristically, the number of epochs depends on how diverse the dataset is
+
+Batch size is the total number of training examples present in a single batch
+
+Iteration is the number of batches needed to complete one epoch (i.e. N / batch_size)
+
+
+Note: General format for the models under Sequential class
+
+0: Import the essentials
+import keras
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.optimizers import SGD
+
+1: Make sure training and testing data are of the right shapes and types
+x_train = x_train.reshape(N,F)
+x_train = x_train.astype('float32')
+y_train = keras.utils.tp_categorical(y_train, M) # M being the number of classes
+
+2: Setup model
+model = Sequential()
+model.add(Dense(n1, activation='sigmoid', input_shape = (F,)) # add first layer, need to specify input shape
+model.add(Dense(n2, activation='sigmoid')) # no need to add input shape for layers following the first one
+...
+model.add(Dense(M, activation='softmax')) 
+
+model.summary() # check model structure
+
+3: Train and predict model
+# Define optimizer and loss function
+model.compile(loss='categorical_crossentropy',
+              optimizer=SGD(),
+metrics=['accuracy'])
+
+# Train
+history = model.fit(x_train, y_train,
+                    batch_size=batch_size,
+                    epochs=epochs,
+                    verbose=1,
+                    validation_data=(x_test, y_test))
+
+# Test
+score = model.evaluate(x_test, y_test, verbose=0)
+
+
