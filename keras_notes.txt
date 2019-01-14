@@ -87,8 +87,21 @@ Emedding layer:
 - syntax: keras.layers.Embedding(input_dim = F, output_dim = K, ..., input_lendth = N)
 
 Flatten layer
-- flattening is needed when the input tensor is D-dimensional with d > 2. By default, the first dimension has to be the data size
-- similar to reshape, but: 1. applies on layers instead of arrays, 2. output dimensions need not be consistent with the total number of   elements.
+- flattening is needed when the input tensor to a Dense layer is D-dimensional with d > 2 and needs to be collapsed to 1-dimensional. By   default, the first dimension has to be the data size and input to a Dense layer is 1D.
+- similar to reshape, but: 1. applies on layers instead of arrays, 2. output dimensions need not be consistent with the total number of   elements (padding options available)
 - syntax: keras.layers.Flatten(data_format=None)
+
+
+Lecture 18:
+
+Functional API
+- an alternative to Sequential() but offers a higher degree of freedom
+- syntax: x = function()(Input), x = function()(x), ..., output = function()(x), model = Model([input], output)
+
+
+Lecture 19:
+
+- Add a pooling layer to further decrease the dimension of parameter space: model.add(MaxPooling2D(pool_size(2,2)))
+- Other pooling functions include: AveragePooling2D, GlobalMaxPooling2D, GlobalAveragePooling2D etc.
 
 
