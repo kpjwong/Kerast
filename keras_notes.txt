@@ -67,4 +67,4 @@ re:   finds string patterns using regex syntax
 What lecture 13 is trying to do:
 
 1. Parse protein squence data in the fasta file in the form: "ID(i): seq(i)\n", put in protein-sequence.txt
-2. Search the catalogue and find all ATP binding protein (0005524)
+2. Search the catalogue and find all proteins that "has function ATP binding" (0005524)
