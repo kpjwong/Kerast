@@ -65,7 +65,17 @@ re:   finds string patterns using regex syntax
 
 str.split(): separate characters in str denominated by ' '
 
+
 What lecture 13 is trying to do:
 
 1. Parse protein squence data in the fasta file in the form: "ID(i): seq(i)\n", put in protein-sequence.txt
 2. Search the catalogue and find all proteins that "has function ATP binding" (0005524)
+
+
+Lecture 14:
+
+Q: What to do when data points are of different lengths?
+A: Pad them using the pad_sequence() method. Usually, we fill the initial space with respect to the max_length we set, with zero values.
+
+
+
