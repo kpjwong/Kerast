@@ -55,7 +55,7 @@ score = model.evaluate(x_test, y_test, verbose=0)
 
 
 
-Some notes on glob, re
+Some notes on glob, re, split
 
 glob: finds all the pathnames matching a specified pattern according to the rules used by the Unix shell
       e.g. glob.glob(scrape_dir + "/*.fasta") #finds all fasta files in scrape_dir
@@ -63,6 +63,7 @@ glob: finds all the pathnames matching a specified pattern according to the rule
 re:   finds string patterns using regex syntax
       e.g. match = re.search(r'(regex expression)', s) #finds matches inside s, outputs as a tuple
 
+str.split(): separate characters in str denominated by ' '
 
 What lecture 13 is trying to do:
 
