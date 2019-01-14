@@ -1,5 +1,6 @@
 Keras notes:
 
+
 Q: What are epochs, iteration, batch size?
 
 A: These terms are used when SGD is used. i.e. data is too big to pass to the computer
@@ -53,3 +54,17 @@ history = model.fit(x_train, y_train,
 score = model.evaluate(x_test, y_test, verbose=0)
 
 
+
+Some notes on glob, re
+
+glob: finds all the pathnames matching a specified pattern according to the rules used by the Unix shell
+      e.g. glob.glob(scrape_dir + "/*.fasta") #finds all fasta files in scrape_dir
+
+re:   finds string patterns using regex syntax
+      e.g. match = re.search(r'(regex expression)', s) #finds matches inside s, outputs as a tuple
+
+
+What lecture 13 is trying to do:
+
+1. Parse protein squence data in the fasta file in the form: "ID(i): seq(i)\n", put in protein-sequence.txt
+2. Search the catalogue and find all ATP binding protein (0005524)
