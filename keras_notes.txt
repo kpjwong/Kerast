@@ -78,4 +78,17 @@ Q: What to do when data points are of different lengths?
 A: Pad them using the pad_sequence() method. Usually, we fill the initial space with respect to the max_length we set, with zero values.
 
 
+Lecture 17:
+
+Emedding layer:
+- can only be first layer
+- usually used when the data is in the form of large, sparse one-hot (categorical) vector. e.g. dictionary
+- given a data in F one-hot vectors, an embedding layer transforms each of the F categories in terms of a K-vector, representing the       weights spanned by K latent variables
+- syntax: keras.layers.Embedding(input_dim = F, output_dim = K, ..., input_lendth = N)
+
+Flatten layer
+- flattening is needed when the input tensor is D-dimensional with d > 2. By default, the first dimension has to be the data size
+- similar to reshape, but: 1. applies on layers instead of arrays, 2. output dimensions need not be consistent with the total number of   elements.
+- syntax: keras.layers.Flatten(data_format=None)
+
 
