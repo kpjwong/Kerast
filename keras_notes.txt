@@ -113,8 +113,12 @@ Lecture 20:
 - Batch normalization can replace dropout (https://towardsdatascience.com/dont-use-dropout-in-convolutional-networks-81486c823c16)
 
 
-Lecture 25:
+Lecture 24-25:
+
+- Use concatenate to join layers on the same level.
+- Use keras.layers.add for residuals connection. Need to make sure the added layers have the same output shapes.
 
 Q: If input shape is (32, 32, 3), and y = Conv2D(3, (3, 3), padding='same')(inputs). Why does y have the same shape as x?
 
 A: It is going to have the same shape, i.e. (32, 32, 3) because of the 'same' padding option.
+
