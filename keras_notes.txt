@@ -122,3 +122,15 @@ Q: If input shape is (32, 32, 3), and y = Conv2D(3, (3, 3), padding='same')(inpu
 
 A: It is going to have the same shape, i.e. (32, 32, 3) because of the 'same' padding option.
 
+
+Lecture 26:
+
+How to save weights:
+0. import h5py
+1. define filepath="checkpoints/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
+2. generate checkpoint = ModelCheckpoint(filepath, 
+                             monitor='val_acc', 
+                             verbose=1, 
+                             mode='max')
+3. To load weights, model.load_weights("checkpoints/weights-improvement-01-0.18.hdf5")   
+   - from this point, model.predict() will use the loaded weights
