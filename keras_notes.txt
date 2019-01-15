@@ -124,7 +124,8 @@ A: It is going to have the same shape, i.e. (32, 32, 3) because of the 'same' pa
 
 Q: What are the differences between convolution and pooling?
 
-A: Convolution: Feature extraction. Pooling: Downsizing.
+A: Convolution: Feature extraction. Has parameters - learning is done.
+   Pooling: Downsizing. Does not have parameters - learning is not done.
 
 
 Lecture 26:
