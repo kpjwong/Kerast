@@ -122,6 +122,10 @@ Q: If input shape is (32, 32, 3), and y = Conv2D(3, (3, 3), padding='same')(inpu
 
 A: It is going to have the same shape, i.e. (32, 32, 3) because of the 'same' padding option.
 
+Q: What are the differences between convolution and pooling?
+
+A: Convolution: Feature extraction. Pooling: Downsizing.
+
 
 Lecture 26:
 
